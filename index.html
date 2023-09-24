@@ -1,56 +1,151 @@
-<div class="resume-container">
-    <div class="personal-info">
-      <h1>Juan Pérez</h1>
-      <p>123 Main Street, Anytown, CA 12345</p>
-      <p>(123) 456-7890</p>
-      <p>juan.perez@example.com</p>
-      <p>
-        Resumen:
-        Programador con experiencia en desarrollo web, con un enfoque en el diseño y la usabilidad.
-      </p>
-    </div>
-    <div class="skills">
-      <h2>Habilidades</h2>
-      <ul>
-        <li>Programación: HTML, CSS, JavaScript, PHP, Python</li>
-        <li>Desarrollo web: React, Angular, Vue.js</li>
-        <li>Diseño gráfico: Adobe Photoshop, Illustrator, Sketch</li>
-        <li>Usabilidad: UX, UI</li>
-      </ul>
-    </div>
-    <div class="experience">
-      <h2>Experiencia</h2>
-      <ul>
-        <li>
-          <strong>Programador web</strong>
-          <p>
-            Empresa X, Anytown, CA
-            <em>2022 - Presente</em>
-          </p>
-          <p>
-            Desarrollo y mantenimiento de sitios web y aplicaciones web.
-          </p>
-        </li>
-        <li>
-          <strong>Ingeniero de software</strong>
-          <p>Empresa Y, Anytown, CA
-            <em>2020 - 2022</em>
-          </p>
-          <p>
-            Desarrollo de software para sistemas operativos móviles.
-          </p>
-        </li>
-      </ul>
-    </div>
-    <div class="education">
-      <h2>Formación</h2>
-      <ul>
-        <li>
-          <strong>Ingeniería de software</strong>
-          <p>Universidad de California, Berkeley
-            <em>2016 - 2020</em>
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Basandome en https://www.w3schools.com/tags/tag_meta.asp intenté incluir toda la metadata que entiendo es útil -->
+
+    <meta charset="utf-8">
+    <meta name="description" content="Pagina con CV diseñada por un principiante">
+    <meta name="keywords" content="currículum vitae, desarrollador web, front end, HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Front End - Mi primer pagina</title>
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico">-->
+    <link rel="stylesheet" href="estilocv.css">
+    <script src="scriptcv.js"></script>
+
+    <!-- Metadatos Open Graph -->
+    <meta property="og:title" content="Proyecto CV de curso inicial Front End">
+    <meta property="og:description" content="Este es el currículum vitae de Roland Stone.">
+    <meta property="og:image" content="URL_DE_LA_IMAGEN_DE_PREVISUALIZACIÓN"> <!-- Reemplazaría esto con la URL de una imagen que represente tu página -->
+    <meta property="og:url" content="URL_DE_TU_PÁGINA"> <!-- Reemplazaría esto con la URL de tu página -->
+    <meta property="og:type" content="website"> 
+    <meta property="og:locale" content="es_AR"> 
+    <meta property="og:site_name" content="Proyecto de Front End - Mi primer pagina">
+</head>
+
+<body>
+    <h1>Curriculum Vitae</h1>
+    <div class="cv-container">
+        <div class="columna-izquierda">
+            <!-- Contenido de columna izquierda -->
+            <div class="foto" id="Foto">
+                <!-- Campo para la foto personal -->
+                <img src="fotocv.jpg" alt="foto de cv">
+                <hr>
+            </div>
+            <div id="Extracto">
+                <h2>Extracto</h2>
+                <!-- Campo para el extracto personal  excede mi conocimiento, pero intente hacer responsive el input para que se pudiera mostrar todo el contenido ingresado SIN EXITO -->
+                <input type="text" name="extracto" id="extracto" placeholder="Escribe aquí un resumen sobre tí y tus objetivos profesionales" title="Este campo debe contener un resumen de tu experiencia y habilidades." style="white-space: pre-wrap;width: 98%;" value="Soy un desarrollador Front End Junior que intenta aprobar este proyecto" required>
+                <br>
+                <br>
+                <hr>
+            </div>
+            <div id="informacion-personal">
+                <h2>Información personal</h2>
+                <form id="informacion-form">
+                    <!-- Campos para información personal -->
+                    <p>Nombre: <input type="text" name="nombre" style= "width:75%" value="Roland" required> </p>
+                    <p>Apellido: <input type="text" name="apellido" style= "width:75%" value="Stone" required> </p>
+                    <p>Sexo: 
+                        <input type="radio" name="sexo" id="hombre" value="Hombre" checked required>
+                        <label for="hombre">Hombre</label>
+                        <input type="radio" name="sexo" id="mujer" value="Mujer" required>
+                        <label for="mujer">Mujer</label>
+                        <input type="radio" name="sexo" id="otro" value="Otro" required>
+                        <label for="otro">Otro</label>
+                    </p>
+                    <p>Fecha de nacimiento: <input type="date" name="fecha-nacimiento" style= "width:45%" value="2000-01-01" required></p>
+                    <p>Teléfono: <input type="tel" name="telefono" style= "width:75%" value="11-4444-5555" required > </p>
+                    <p>Correo electrónico: <input type="email" name="correo" value="roland.stone@example.com" required></p>
+                </form>
+                <br>
+            </div>
+        </div>    
+        <div class="columna-derecha">
+            <!-- COLUMNA DERECHA  -->
+            <div>
+                <h2>Educación</h2>
+                <form id="educacion-form">
+                    <ul id="educacion-list">
+                        <!-- Campos para la educación -->
+                        <p><label for="grado">Grado:</label> <input type="text" id="grado" name="grado" value="Desarrollador Front End" required></p>
+                        <p><label for="institucion">Institución:</label> <input type="text" id="institucion" name="institucion" value="TICMAS" required></p>
+                    </ul>
+                </form>
+                <hr>
+            </div>
+            <!-- Sección Experiencia Laboral -->
+            <div>
+                <h2>Experiencia laboral</h2>
+                <form id="experiencia-form">
+                    <ul id="experiencia-list">
+                        <!-- Campos para la experiencia laboral -->
+                        <p><label for="puesto">Puesto:</label> <input type="text" id="puesto" name="puesto" value="Pasante en IT" required></p>
+                        <p><label for="empresa">Empresa:</label> <input type="text" id="empresa" name="empresa" value="TICMAS S.A." required></p>
+                        <p><label for="experiencia-fechas">Fecha desde/hasta:</label> <input type="text" id="experiencia-fechas" name="experiencia-fechas" value="01/01/2023 al presente" required></p>
+                    </ul>
+                </form>
+                <hr>
+            </div>
+            <!-- Sección Habilidades -->
+            <div>
+                <h2>Habilidades</h2>
+                <form id="habilidades-form">
+                    <ul id="habilidades-list">
+                        <!-- Campos para habilidades -->
+                        <p><label for="habilidad1">Habilidad 1:</label> <input type="text" id="habilidad1" name="habilidad1" value="HTML y CSS" required></p>
+                        <p><label for="nivel1">Nivel:</label> <input type="range" id="nivel1" name="nivel1" min="0" max="100" value="50"></p>
+                        <p><label for="habilidad2">Habilidad 2:</label> <input type="text" id="habilidad2" name="habilidad2" value="Javascript" required></p>
+                        <p><label for="nivel2">Nivel:</label> <input type="range" id="nivel2" name="nivel2" min="0" max="100" value="25"></p>     
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div> 
+    <div class="cv-otros">
+        <div class="opciones">
+            <!-- Sección opciones -->
+            <h3>Opciones disponibles</h3>
+            <p>Elija el estilo para su CV
+              <!-- seleccion ultimo intento -->  
+                <select id="selectorEstilo">
+                    <option value="estilo1">Estilo 1</option>
+                    <option value="estilo2">Estilo 2</option>
+                    <option value="estilo3">Estilo 3</option>
+                </select>
+            </p>
+            <hr>
+            <button type="button" id="control-carga" onclick="controlCarga()">Control de datos incompletos o incorrectos</button>
+            <br>
+            <button type="button" id="borrar-contenido" onclick="borrarDatos()">Borrar datos cargados</button>
+            <br>
+            <!-- Como no pude resolver que se tomaran los datos cargados para generar el pdf, 
+                generé un archivo (que es lo que no pude hacer) y luego si lo mostre como si lo hubiera generado con los datos cargados -->
+            <button type="button" id="ver-pdf" onclick="verPDF()">Ver CV como pdf</button>
+
+            <div class="enlaces-utiles">
+                <!-- Sección con enlaces a recursos útiles -->
+                <h4>Enlaces utilizados</h4>
+                <ul>
+                    <li><a href="https://www.w3schools.com/html/default.asp" target="_blank">Visitar W3Schools - Tutorial
+                            HTML</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">Visitar Mozilla Developer -
+                            CSS</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">Visitar Mozilla Developer
+                            - JavaScript</a></li>
+                </ul>
+                <hr>
+            </div>  
+        </div> 
+            
+        <footer>
+                <br>
+                <p>Autor: Marcelo Benitez<br>
+                <a href="mailto:marf.btz@gmail.com">marf.btz@gmail.com</a></p>
+        </footer>       
+    </div>         
+              
+</body>
+
+</html>
+
